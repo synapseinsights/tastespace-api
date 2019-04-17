@@ -1,0 +1,12 @@
+// Example config for purposes of committing to github only
+// Rename this file to default.json and put the real mongodb credentials below 
+{
+  "host": "localhost",
+  "port": 3030,
+  "public": "../public/",
+  "paginate": {
+    "default": 10,
+    "max": 50
+  },
+  "mongodb": "mongodb+srv://user:pasword@URL/databasename?retryWrites=true"
+}

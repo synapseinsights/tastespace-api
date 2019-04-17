@@ -1,0 +1,12 @@
+build/*
+node_modules
+config/default.json
+*.DS_Store
+Thumbs.db
+ehthumbs.db
+ehthumbs_vista.db
+*.cab
+*.msi
+*.msm
+*.msp
+
