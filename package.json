@@ -2,7 +2,7 @@
   "name": "tastespace-api",
   "description": "backend server for taste-space app",
   "version": "0.0.0",
-  "homepage": "",
+  "homepage": "https://github.com/synapseinsights/tastespace-api",
   "main": "src",
   "keywords": [
     "feathers"
@@ -25,9 +25,10 @@
   "scripts": {
     "test": "npm run eslint && NODE_ENV= npm run mocha",
     "eslint": "eslint src/. test/. --config .eslintrc.json",
-    "dev": "nodemon src/",
-    "start": "node src/",
-    "mocha": "mocha test/ --recursive --exit"
+    "dev": "npm run build && nodemon src/",
+    "start": "npm run build && node src/",
+    "mocha": "mocha test/ --recursive --exit",
+    "build": "rollup -c"
   },
   "dependencies": {
     "@feathersjs/configuration": "^2.0.6",
@@ -49,6 +50,12 @@
     "mocha": "^5.2.0",
     "nodemon": "^1.18.11",
     "request": "^2.88.0",
-    "request-promise": "^4.2.4"
+    "request-promise": "^4.2.4",
+    "rollup": "^1.2.2",
+    "rollup-plugin-commonjs": "^9.2.0",
+    "rollup-plugin-node-resolve": "^4.0.1",
+    "rollup-plugin-svelte": "^5.0.3",
+    "rollup-plugin-terser": "^4.0.4",
+    "svelte": "^3.0.0-beta.7"
   }
 }

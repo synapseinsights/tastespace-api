@@ -2,10 +2,12 @@
 
 Backend RESTful API server for TasteSpace. Built using [Feathers](https://docs.feathersjs.com/) with [Mongodb](https://www.mongodb.com/) (hosted on [MongoDB Atlas](https://cloud.mongodb.com)).
 
+Front end uses components built using [Svelte](https://v3.svelte.technology/docs) which is a super-fast and super-light framework that compiles components to a single vanilla javascript file without needing an entire frontend library (e.g. Vue or React). To automate this compile process the `package.json`, `build` and `run` commands first build everything in `front_src` and produce `public/bundle.css`, `public/global.css`, and `public/bundle.js`. Then `public/index.html` simple loads these files. 
+
 ## Using  
 
 1. Install dependencies: `npm install`
-2. Start the app: `npm start`
+2. Start the app: `npm run dev`
 
 Now you can test making requests to different collections within the Mongo database called `api`.  
 
@@ -67,8 +69,17 @@ Mlab has been migrated to Mongodb Atlas. The easiest way to interact with it is 
 
 ## App Layout Description
 
+### Backend  
+
 This project was scaffolded using Feathers CLI via `feathers generate app`.  
 See [this guide](https://docs.feathersjs.com/guides/chat/creating.html) for what the files/folders mean.
+
+### Frontend
+
+Lives in the `front_src` folder in which different components are build using single `.svelte` files. Svelte is super easy to use and looks just like regular HTML, but with some extra magic.  
+[Docs](https://v3.svelte.technology/docs)  
+[Tutorial](https://v3.svelte.technology/tutorial/basics)  
+[Example components](https://v3.svelte.technology/examples) (just copy and paste the code to make new components!)  
 
 ## Testing
 
