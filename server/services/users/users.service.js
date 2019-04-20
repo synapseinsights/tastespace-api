@@ -1,4 +1,4 @@
-// Initializes the `api` service on path `/api`
+// Initializes the `users` service on path `/users`
 const createService = require('feathers-mongodb');
 const hooks = require('./users.hooks');
 

@@ -57,6 +57,11 @@ module.exports = function (app) {
 
 (Optional) Add a test for the new endpoint integration. Simply duplicate any existing endpoint tests under `test/services`. Rename it to your endpoint and edit the code to add your endpoint name.  
 
+## Building more views ("components") of the database  
+
+Because we're using Svelte, rather than routing to end points, we actually just have a single-page application component that uses reactivity and logic to dynamically render stuff to the DOM. To keep things super simple, we're not using any kind of front-end router, but just managing application state with Svelte state management ("storage"), and persisting authorization status using cookies. Not necessarily the most optimal solution, but it's lightweight, **simple** and reliable. To create new components simple create new `.html` or `.svelte` files in the `client/` folder using the previous ones as an example. `App.svelte` is the main entrypoint component so new components should be imported _into_ it and then rendered with logic (e.g. see how `Logic.svelte` is handled).
+
+
 ## Managing the database  
 
 Mlab has been migrated to Mongodb Atlas. The easiest way to interact with it is to:  
@@ -71,12 +76,12 @@ Mlab has been migrated to Mongodb Atlas. The easiest way to interact with it is 
 
 ### Backend  
 
-This project was scaffolded using Feathers CLI via `feathers generate app`.  
+This project was scaffolded using Feathers CLI via `feathers generate app` and backend code lives in the `server` directory.  
 See [this guide](https://docs.feathersjs.com/guides/chat/creating.html) for what the files/folders mean.
 
 ### Frontend
 
-Lives in the `front_src` folder in which different components are build using single `.svelte` files. Svelte is super easy to use and looks just like regular HTML, but with some extra magic.  
+Lives in the `client` folder in which different components are build using single `.svelte` files. Svelte is super easy to use and looks just like regular HTML, but with some extra magic.  
 [Docs](https://v3.svelte.technology/docs)  
 [Tutorial](https://v3.svelte.technology/tutorial/basics)  
 [Example components](https://v3.svelte.technology/examples) (just copy and paste the code to make new components!)  
@@ -93,8 +98,7 @@ Simply run `npm test` and all your tests in the `test/` directory will be run.
 
 ## Todos
 
-Added authentication so endpoints aren't available unless user is logged in:  
-https://docs.feathersjs.com/guides/chat/authentication.html
+Create homepage component after authorizing, with buttons that allow movement to other components using Svelte storage (e.g. see `authorized.js`). 
 
 ## Changelog
 
